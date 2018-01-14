@@ -20,7 +20,7 @@ const containerCardsStarships = document.querySelector('#containerCardsStarships
 
 buttonPeople.addEventListener('click', people);
 buttonPlanets.addEventListener('click', planets);
-// buttonFilms.addEventListener('click', films);
-// buttonSpecies.addEventListener('click', Species);
-// buttonVehicles.addEventListener('click', vehicles);
-// buttonStarships.addEventListener('click', Starships);
+buttonFilms.addEventListener('click', films);
+buttonSpecies.addEventListener('click', species);
+buttonVehicles.addEventListener('click', vehicles);
+buttonStarships.addEventListener('click', starships);

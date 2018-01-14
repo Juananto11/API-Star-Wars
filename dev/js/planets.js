@@ -23,10 +23,10 @@ const planets = () => {
     let info = `
       <img src="${imagenes[i]}" alt="" />
       <h2><span class="etiqueta">Nombre:</span> ${json[i].name}</h2>
-      <p><span class="etiqueta">Genero:</span> ${json[i].gender}</p>
-      <p><span class="etiqueta">Nacimiento:</span> ${json[i].birth_year}</p>
-      <p><span class="etiqueta">Altura:</span> ${json[i].height}</p>
-      <p><span class="etiqueta">Peso:</span> ${json[i].mass}</p>`;
+      <p><span class="etiqueta">Diametro:</span> ${json[i].diameter}</p>
+      <p><span class="etiqueta">Clima:</span> ${json[i].climate}</p>
+      <p><span class="etiqueta">Gravedad:</span> ${json[i].gravity}</p>
+      <p><span class="etiqueta">Población:</span> ${json[i].population}</p>`;
 
     containerCardsPlanets.appendChild(card);
     card.setAttribute('class', 'card');
@@ -39,17 +39,31 @@ const planets = () => {
         containerCardsPeople.removeChild(card[i]);
       }
     }
-    // containerCardsFilms.removeChild(card);
-    // containerCardsSpecies.removeChild(card);
-    // containerCardsVehicles.removeChild(card);
-    // containerCardsStarships.removeChild(card);
-    // if (cardLong < 0) {
+    if (containerCardsFilms.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsFilms.removeChild(card[i]);
+      }
+    }
+    if (containerCardsSpecies.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsSpecies.removeChild(card[i]);
+      }
+    }
+    if (containerCardsVehicles.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsVehicles.removeChild(card[i]);
+      }
+    }
+    if (containerCardsStarships.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsStarships.removeChild(card[i]);
+      }
+    }
     if (containerCardsPlanets.childNodes.length > 0) {
       for (let i = 0; i < cardLong; i++) {
         containerCardsPlanets.removeChild(card[i]);
       }
     }
-    // }
   };
 
   const star = (selectPlanets) => {
@@ -107,6 +121,10 @@ const planets = () => {
 
   containerPeople.setAttribute('class', 'invisible');
   containerPlanets.setAttribute('class', 'visible');
+  containerFilms.setAttribute('class', 'invisible');
+  containerSpecies.setAttribute('class', 'invisible');
+  containerVehicles.setAttribute('class', 'invisible');
+  containerStarships.setAttribute('class', 'invisible');
   request.onload = star;
   request.onerror = starError;
   request.open('GET', 'https://swapi.co/api/planets');

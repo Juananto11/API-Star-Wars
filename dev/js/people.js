@@ -39,17 +39,31 @@ const people = () => {
         containerCardsPlanets.removeChild(card[i]);
       }
     }
-    // containerCardsFilms.removeChild(card);
-    // containerCardsSpecies.removeChild(card);
-    // containerCardsVehicles.removeChild(card);
-    // containerCardsStarships.removeChild(card);
-    // if (cardLong < 0) {
+    if (containerCardsFilms.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsFilms.removeChild(card[i]);
+      }
+    }
+    if (containerCardsSpecies.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsSpecies.removeChild(card[i]);
+      }
+    }
+    if (containerCardsVehicles.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsVehicles.removeChild(card[i]);
+      }
+    }
+    if (containerCardsStarships.childNodes.length > 0) {
+      for (let i = 0; i < cardLong; i++){
+        containerCardsStarships.removeChild(card[i]);
+      }
+    }
     if (containerCardsPeople.childNodes.length > 0) {
       for (let i = 0; i < cardLong; i++) {
         containerCardsPeople.removeChild(card[i]);
       }
     }
-    // }
   };
 
   const star = (selectPeople) => {
@@ -107,6 +121,10 @@ const people = () => {
 
   containerPeople.setAttribute('class', 'visible');
   containerPlanets.setAttribute('class', 'invisible');
+  containerFilms.setAttribute('class', 'invisible');
+  containerSpecies.setAttribute('class', 'invisible');
+  containerVehicles.setAttribute('class', 'invisible');
+  containerStarships.setAttribute('class', 'invisible');
   request.onload = star;
   request.onerror = starError;
   request.open('GET', 'https://swapi.co/api/people');
