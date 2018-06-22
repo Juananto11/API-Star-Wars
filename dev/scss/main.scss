@@ -6,12 +6,12 @@
          url('./../fonts/starjedi-webfont.woff') format('woff'),
          url('./../fonts/starjedi-webfont.ttf') format('truetype'),
          url('./../fonts/starjedi-webfont.svg#star_jediregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+         font-weight: normal;
+         font-style: normal;
+        }
 
-*,
-*::before,
+        *,
+        *::before,
 *::after {
   box-sizing: border-box
 }
@@ -27,8 +27,12 @@ body {
   background-color: #002663;
 }
 .title {
-  margin: 0;
+  height: 71px;
+}
+.title h1 {
   padding: 1rem 50px;
+  display: inline-block;
+  margin: 0;
   font-size: 1.5em;;
   font-family: 'star_jedi';
   cursor: pointer;
@@ -263,13 +267,14 @@ body {
     height: 71px;
   }
   .title {
-    height: 71px;
     text-align: center;
-    font-size: 3em;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .title h1 {
+    font-size: 3em;
   }
   .menu {
     display: none;
