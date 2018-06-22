@@ -1,4 +1,5 @@
 const menu = document.getElementById('menu')
+const title = document.getElementById('title')
 const nav = document.getElementById('nav')
 const closeMenu = document.getElementById('closeMenu')
 const paths = [
@@ -234,6 +235,7 @@ const selectCharacter = (e) => {
   })
 }
 
+title.addEventListener('click', () => { window.location.search = 'index' })
 menu.addEventListener('click', toggleMenu)
 closeMenu.addEventListener('click', toggleMenu)
 buttons.forEach((button, index) => {
