@@ -4,124 +4,129 @@ html(lang="es-MX")
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
     meta(charset="UTF-8")
     title API Start Wars
-    link(rel="stylesheet", href="./assets/css/main.css")
+    link(href='https://fonts.googleapis.com/css?family=Rubik:400', rel='stylesheet')
+    link(rel="stylesheet", href="./css/main.css")
+    script(src="./js/load.js")
   body
-    h1 API Star Wars
-    
-    p.select ¿Qué quieres ver?
-    .buttons
-      button#buttonPeople.button Personajes
-      button#buttonPlanets.button Planetas
-      button#buttonFilms.button Películas
-      button#buttonSpecies.button Razas
-      button#buttonVehicles.button Vehículos
-      button#buttonStarships.button Naves
+    header.header
+      h1.title star wars
+      .menu#menu
+        span.menu__icon
+      nav.nav#nav
+        #closeMenu
+        ul.nav__container
+          li#index.nav__item inicio
+          li#people.nav__item personajes
+          li#planets.nav__item planetas
+          li#films.nav__item películas
+          li#species.nav__item razas
+          li#vehicles.nav__item vehículos
+          li#starships.nav__item naves
 
-    #containerPeople.invisible
-      .selectGrup
-        p.select Selecciona un Personaje
-        select#selectPeople
-          option(value="all") All
-          option(value="luke") Luke Skywalker
-          option(value="c3po") C-3PO
-          option(value="r2d2") R2-D2
-          option(value="darth") Darth Vader
-          option(value="leia") Leia Organa
-          option(value="owen") Owen Lars
-          option(value="beru") Beru White Lars
-          option(value="r5d5") R5-D5
-          option(value="biggs") Biggs Darklighter
-          option(value="obi") Obi-Wan Kenobi
-      #containerCardsPeople
+    main.main-container
+      #container-index.invisible.index
+        h3.subtitle bienvenido!!!
+        p Espero que disfrutes esta pequeña aplicación donde presento algunas cosas de las saga
+          span.highlight  star wars
+        img.logo(src="./img/star-wars.jpg", alt="star wars")
 
-    #containerPlanets.invisible 
-      .selectGrup
-        p.select Selecciona un Planeta
-        select#selectPlanets
-          option(value="all") All
-          option(value="alderaan") Alderaan
-          option(value="yavin") Yavin IV
-          option(value="hoth") Hoth
-          option(value="dagobah") Dagobah
-          option(value="bespin") Bespin
-          option(value="endor") Endor
-          option(value="naboo") Naboo
-          option(value="coruscant") Coruscant
-          option(value="kamino") Kamino
-          option(value="geonosis") Geonosis 
-      #containerCardsPlanets
+      #container-people.invisible
+        .select
+          p.select__title Selecciona un Personaje
+          select.select__options#select-people
+            option(value="all") All
+            option(value="luke") Luke Skywalker
+            option(value="c-3po") C-3PO
+            option(value="r2-d2") R2-D2
+            option(value="darth") Darth Vader
+            option(value="leia") Leia Organa
+            option(value="owen") Owen Lars
+            option(value="beru") Beru White Lars
+            option(value="r5-d4") R5-D4
+            option(value="biggs") Biggs Darklighter
+            option(value="obi-wan") Obi-Wan Kenobi
+        #container-cards-people
 
-    #containerFilms.invisible
-      .selectGrup
-        p.select Selecciona una Pelicula
-        select#selectFilms
-          option(value="all") All
-          option(value="4") A New Hope
-          option(value="2") Attack of the Clones
-          option(value="1") The Phantom Menace
-          option(value="3") Revenge of the Sith
-          option(value="6") Return of the Jedi
-          option(value="5") The Empire Strikes Back
-          option(value="7") The Force Awakens
-      #containerCardsFilms
+      #container-planets.invisible
+        .select
+          p.select__title Selecciona un Planeta
+          select.select__options#select-planets
+            option(value="all") All
+            option(value="alderaan") Alderaan
+            option(value="yavin") Yavin IV
+            option(value="hoth") Hoth
+            option(value="dagobah") Dagobah
+            option(value="bespin") Bespin
+            option(value="endor") Endor
+            option(value="naboo") Naboo
+            option(value="coruscant") Coruscant
+            option(value="kamino") Kamino
+            option(value="geonosis") Geonosis
+        #container-cards-planets
 
-    #containerSpecies.invisible
-      .selectGrup
-        p.select Selecciona una Raza
-        select#selectSpecies
-          option(value="all") All
-          option(value="hutt") Hutt 
-          option(value="yoda") Yoda's species
-          option(value="trandoshan") Trandoshan
-          option(value="mon") Mon Calamari
-          option(value="ewok") Ewok
-          option(value="sullustan") Sullustan
-          option(value="neimodian") Neimodian
-          option(value="gungan") Gungan
-          option(value="toydarian") Toydarian
-          option(value="dug") Dug
-      #containerCardsSpecies
+      #container-films.invisible
+        .select
+          p.select__title Selecciona una Pelicula
+          select.select__options#select-films
+            option(value="all") All
+            option(value="episodio_4") A New Hope
+            option(value="episodio_2") Attack of the Clones
+            option(value="episodio_1") The Phantom Menace
+            option(value="episodio_3") Revenge of the Sith
+            option(value="episodio_6") Return of the Jedi
+            option(value="episodio_5") The Empire Strikes Back
+            option(value="episodio_7") The Force Awakens
+        #container-cards-films
 
-    #containerVehicles.invisible
-      .selectGrup
-        p.select Selecciona un Vehiculo
-        select#selectVehicles
-          option(value="all") All
-          option(value="sand") Sand Crawler
-          option(value="t-16") T-16 skyhopper
-          option(value="x-34") X-34 landspeeder
-          option(value="tie-ln") TIE/LN starfighter
-          option(value="snowspeeder") Snowspeeder
-          option(value="tie-bomber") TIE bomber
-          option(value="at-at") AT-AT
-          option(value="at-st") AT-ST
-          option(value="storm") Storm IV Twin-Pod cloud car
-          option(value="sail") Sail barge 
-      #containerCardsVehicles
+      #container-species.invisible
+        .select
+          p.select__title Selecciona una Raza
+          select.select__options#select-species
+            option(value="all") All
+            option(value="hutt") Hutt
+            option(value="yoda's") Yoda's species
+            option(value="trandoshan") Trandoshan
+            option(value="mon") Mon Calamari
+            option(value="ewok") Ewok
+            option(value="sullustan") Sullustan
+            option(value="neimodian") Neimodian
+            option(value="gungan") Gungan
+            option(value="toydarian") Toydarian
+            option(value="dug") Dug
+        #container-cards-species
 
-    #containerStarships.invisible
-      .selectGrup
-        p.select Selecciona una Nave
-        select#selectStarships
-          option(value="all") All
-          option(value="executor") Executor
-          option(value="sentinel") Sentinel-class landing craft
-          option(value="death") Death Star
-          option(value="millennium") Millennium Falcom
-          option(value="y-wing") Y-wing
-          option(value="x-wing") X-wing
-          option(value="tie-advance") TIE Advance x1
-          option(value="slave") Slave 1
-          option(value="imperial") Imperial shutter
-          option(value="ef76") EF76 Nebulon-B escort frigate 
-      #containerCardsStarships
+      #container-vehicles.invisible
+        .select
+          p.select__title Selecciona un Vehiculo
+          select.select__options#select-vehicles
+            option(value="all") All
+            option(value="sand") Sand Crawler
+            option(value="t-16") T-16 skyhopper
+            option(value="x-34") X-34 landspeeder
+            option(value="tie/ln") TIE/LN starfighter
+            option(value="snowspeeder") Snowspeeder
+            option(value="tie") TIE bomber
+            option(value="at-at") AT-AT
+            option(value="at-st") AT-ST
+            option(value="storm") Storm IV Twin-Pod cloud car
+            option(value="sail") Sail barge
+        #container-cards-vehicles
 
-    #container.container
+      #container-starships.invisible
+        .select
+          p.select__title Selecciona una Nave
+          select.select__options#select-starships
+            option(value="all") All
+            option(value="executor") Executor
+            option(value="sentinel-class") Sentinel-class landing craft
+            option(value="death") Death Star
+            option(value="millennium") Millennium Falcom
+            option(value="y-wing") Y-wing
+            option(value="x-wing") X-wing
+            option(value="tie") TIE Advance x1
+            option(value="slave") Slave 1
+            option(value="imperial") Imperial shutter
+            option(value="ef76") EF76 Nebulon-B escort frigate
+        #container-cards-starships
 
-    script(src="./assets/js/people.js")
-    script(src="./assets/js/planets.js")
-    script(src="./assets/js/films.js")
-    script(src="./assets/js/species.js")
-    script(src="./assets/js/vehicles.js")
-    script(src="./assets/js/starships.js")
-    script(src="./assets/js/main.js")
+    script(src="./js/main.js")
