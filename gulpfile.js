@@ -18,7 +18,7 @@ gulp.task('html', () => {
     .pipe(pug({
       // pretty: true
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./'))
 })
 
 gulp.task('css', () => {
@@ -51,7 +51,7 @@ gulp.task('img', () => {
 })
 
 gulp.task('default', ['html', 'css', 'js'], () => {
-  browsersync.init({server: './dist'})
+  browsersync.init({server: './'})
   gulp.watch('dev/views/**/*.pug', ['html']).on('change', browsersync.reload)
   gulp.watch('dev/scss/**/*.scss', ['css']).on('change', browsersync.reload)
   gulp.watch('dev/js/**/*.js', ['js']).on('change', browsersync.reload)
