@@ -91,9 +91,13 @@ paths.forEach(path => {
   selects.push(document.getElementById(`select-${path}`))
 })
 
-if (window.location.origin === 'http://localhost:3000' && !paths.includes(window.location.search.replace('?', ''))) {
-  window.location.href = 'http://localhost:3000/?index'
+if (window.location.origin === 'https://juananto11.github.io/api-starwars' && !paths.includes(window.location.search.replace('?', ''))) {
+  window.location.href = 'https://juananto11.github.io/api-starwars/?index'
 }
+
+// if (window.location.origin === 'http://localhost:3000' && !paths.includes(window.location.search.replace('?', ''))) {
+//   window.location.href = 'http://localhost:3000/?index'
+// }
 
 const showPage = (page) => {
   window.location.search = `?${page}`
