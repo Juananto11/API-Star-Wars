@@ -1,3 +1,4 @@
+const spinner = document.getElementById('spinner')
 const menu = document.getElementById('menu')
 const title = document.getElementById('title')
 const nav = document.getElementById('nav')
@@ -101,7 +102,11 @@ if (window.location.origin === 'https://juananto11.github.io/api-starwars' && !p
 // }
 
 const showPage = (page) => {
-  window.location.search = `?${page}`
+  nav.classList.remove('nav-expand')
+  spinner.classList.remove('spinner--hidden')
+  setTimeout(() => {
+    window.location.search = `?${page}`
+  }, 500)
 }
 
 const toggleMenu = () => {
@@ -253,6 +258,7 @@ buttons.forEach((button, index) => {
 selects.forEach(select => {
   if (select) select.addEventListener('change', (e) => selectCharacter(e))
 })
+
 window.addEventListener('DOMContentLoaded', () => showData(window.location.search.replace('?', '')))
 window.addEventListener('resize', () => {
   if (window.matchMedia('(min-width: 767px)').matches) {
@@ -260,7 +266,6 @@ window.addEventListener('resize', () => {
     nav.classList.remove('nav-expand')
   }
 })
-
 window.addEventListener('mousewheel', (e) => {
   Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
 })
