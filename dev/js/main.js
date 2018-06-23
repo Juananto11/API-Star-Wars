@@ -190,6 +190,11 @@ const drawResponse = (response, container) => {
     }
   })
   document.getElementById(`container-cards-${container}`).appendChild(div)
+
+  const spinner = document.getElementById('spinner')
+  setTimeout(() => {
+    spinner.classList.add('spinner--hidden')
+  }, 500)
 }
 
 const request = (endPoint) => {
@@ -220,6 +225,11 @@ const showData = (endPoint) => {
 
   if (window.location.search !== '?index') {
     request(endPoint)
+  } else {
+    const spinner = document.getElementById('spinner')
+    setTimeout(() => {
+      spinner.classList.add('spinner--hidden')
+    }, 500)
   }
 }
 
