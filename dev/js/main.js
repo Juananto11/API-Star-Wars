@@ -1,4 +1,5 @@
 const spinner = document.getElementById('spinner')
+const header = document.getElementById('header')
 const menu = document.getElementById('menu')
 const title = document.getElementById('title')
 const nav = document.getElementById('nav')
@@ -87,19 +88,24 @@ const buttons = []
 const containers = []
 const selects = []
 
+let a
+let b
+
 paths.forEach(path => {
   buttons.push(document.getElementById(path))
   containers.push(document.getElementById(`container-${path}`))
   selects.push(document.getElementById(`select-${path}`))
 })
 
+// En github pages
 if (window.location.origin === 'https://juananto11.github.io/api-starwars' && !paths.includes(window.location.search.replace('?', ''))) {
   window.location.href = 'https://juananto11.github.io/api-starwars/?index'
 }
 
-// if (window.location.origin === 'http://localhost:3000' && !paths.includes(window.location.search.replace('?', ''))) {
-//   window.location.href = 'http://localhost:3000/?index'
-// }
+// En desarrollo
+if (window.location.origin === 'http://localhost:3000' && !paths.includes(window.location.search.replace('?', ''))) {
+  window.location.href = 'http://localhost:3000/?index'
+}
 
 const showPage = (page) => {
   nav.classList.remove('nav-expand')
@@ -268,6 +274,12 @@ window.addEventListener('resize', () => {
 })
 window.addEventListener('mousewheel', (e) => {
   Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
+  a = document.documentElement.scrollTop
+})
+window.addEventListener('scroll', (e) => {
+  b = document.documentElement.scrollTop
+  if (a < b) header.style.top = '-71px'
+  if (a > b) header.style.top = '0'
 })
 window.addEventListener('touchmove', (e) => {
   if (Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'hidden'
