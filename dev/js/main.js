@@ -200,7 +200,6 @@ const drawResponse = (response, container) => {
 const request = (endPoint) => {
   fetch(`https://swapi.co/api/${endPoint}`)
     .then(res => {
-      console.log(res.status)
       switch (res.status) {
         case 200:
           return res.json()
@@ -260,4 +259,8 @@ window.addEventListener('resize', () => {
     menu.classList.remove('arrow')
     nav.classList.remove('nav-expand')
   }
+})
+
+window.addEventListener('mousewheel', (e) => {
+  if (Array.from(nav.classList).includes('nav-expand')) e.preventDefault()
 })
