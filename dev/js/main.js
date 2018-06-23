@@ -262,5 +262,9 @@ window.addEventListener('resize', () => {
 })
 
 window.addEventListener('mousewheel', (e) => {
-  if (Array.from(nav.classList).includes('nav-expand')) e.preventDefault()
+  Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
+})
+window.addEventListener('touchmove', (e) => {
+  if (Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'hidden'
+  if (!Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'scroll'
 })
