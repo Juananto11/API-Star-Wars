@@ -273,6 +273,11 @@ window.addEventListener('resize', () => {
     nav.classList.remove('nav-expand')
   }
 })
+window.addEventListener('touchmove', (e) => {
+  if (Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'hidden'
+  if (!Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'scroll'
+  a = document.documentElement.scrollTop
+})
 window.addEventListener('mousewheel', (e) => {
   Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
   a = document.documentElement.scrollTop
@@ -281,8 +286,4 @@ window.addEventListener('scroll', (e) => {
   b = document.documentElement.scrollTop
   if (a < b) header.style.top = '-71px'
   if (a > b) header.style.top = '0'
-})
-window.addEventListener('touchmove', (e) => {
-  if (Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'hidden'
-  if (!Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'scroll'
 })
