@@ -1,3 +1,5 @@
+const doc = document.documentElement
+const body = document.body
 const spinner = document.getElementById('spinner')
 const header = document.getElementById('header')
 const menu = document.getElementById('menu')
@@ -268,17 +270,19 @@ window.addEventListener('resize', () => {
   }
 })
 window.addEventListener('touchmove', (e) => {
-  if (Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'hidden'
-  if (!Array.from(nav.classList).includes('nav-expand')) document.body.style.overflow = 'scroll'
-  a = document.documentElement.scrollTop
+  if (Array.from(nav.classList).includes('nav-expand')) body.style.overflow = 'hidden'
+  if (!Array.from(nav.classList).includes('nav-expand')) body.style.overflow = 'scroll'
+  if (!Array.from(spinner.classList).includes('spinner--hidden')) body.style.overflow = 'hidden'
+  if (Array.from(spinner.classList).includes('spinner--hidden')) body.style.overflow = 'scroll'
+  a = doc.scrollTop
 })
 window.addEventListener('mousewheel', (e) => {
   Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
   !Array.from(spinner.classList).includes('spinner--hidden') && e.preventDefault()
-  a = document.documentElement.scrollTop
+  a = doc.scrollTop
 })
 window.addEventListener('scroll', (e) => {
-  b = document.documentElement.scrollTop
+  b = doc.scrollTop
   if (a < b && b > 71) header.style.top = '-71px'
   if (b < 71) header.style.top = '0'
   if (a > b) header.style.top = '0'
