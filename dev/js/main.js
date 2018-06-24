@@ -109,6 +109,7 @@ if (window.location.origin === 'http://localhost:3000' && !paths.includes(window
 
 const showPage = (page) => {
   nav.classList.remove('nav-expand')
+  menu.classList.remove('arrow')
   spinner.classList.remove('spinner--hidden')
   setTimeout(() => {
     window.location.search = `?${page}`

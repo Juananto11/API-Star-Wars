@@ -99,7 +99,7 @@ body {
   align-items: center;
   cursor: pointer;
   transition: background-color linear .5s,
-              right linear .2s .0s;
+              right linear .35s .0s;
   &:hover {
     @media (hover: hover) {
       background-color: #4d4f53;
@@ -140,9 +140,9 @@ body {
   }
 }
 .arrow {
-  background-color: #4d4f53;
-  right: 150px;
-  transition: right linear .2s .3s,
+  background-color: red;
+  right: 225px;
+  transition: right linear .35s .15s,
               background-color linear .3s;
   .menu__icon {
     width: 30px;
@@ -161,12 +161,12 @@ body {
   }
   &:hover {
     @media (hover: hover) {
-      background-color: red;
+      background-color: #002663;
     }
   }
   &:active {
     @media (hover: none) {
-      background-color: red;
+      background-color: #4d4f53;
     }
   }
 }
@@ -298,6 +298,7 @@ body {
   margin: 1em;
   overflow: hidden;
   position: relative;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
  &__title {
    background-color: rgba(0, 0, 0, 0.8);
    text-align: center;
