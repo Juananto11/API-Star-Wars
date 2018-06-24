@@ -284,6 +284,6 @@ window.addEventListener('mousewheel', (e) => {
 })
 window.addEventListener('scroll', (e) => {
   b = document.documentElement.scrollTop
-  if (a < b) header.style.top = '-71px'
+  if (a < b && b > 71) header.style.top = '-71px'
   if (a > b) header.style.top = '0'
 })
