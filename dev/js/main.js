@@ -111,6 +111,7 @@ const showPage = (page) => {
   nav.classList.remove('nav-expand')
   menu.classList.remove('arrow')
   spinner.classList.remove('spinner--hidden')
+  header.style.top = '0'
   setTimeout(() => {
     window.location.search = `?${page}`
   }, 500)
