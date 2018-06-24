@@ -281,6 +281,7 @@ window.addEventListener('touchmove', (e) => {
 })
 window.addEventListener('mousewheel', (e) => {
   Array.from(nav.classList).includes('nav-expand') && e.preventDefault()
+  !Array.from(spinner.classList).includes('spinner--hidden') && e.preventDefault()
   a = document.documentElement.scrollTop
 })
 window.addEventListener('scroll', (e) => {
