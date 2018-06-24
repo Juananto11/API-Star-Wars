@@ -227,12 +227,8 @@ const request = (endPoint) => {
 
 const showData = (endPoint) => {
   containers.forEach((container, index) => {
-    if (container.id.includes(window.location.search.replace('?', ''))) {
-      container.classList.remove('invisible')
-    }
-    if (buttons[index].id === window.location.search.replace('?', '')) {
-      buttons[index].classList.add('nav__item--black')
-    }
+    if (container.id.includes(window.location.search.replace('?', ''))) container.classList.remove('invisible')
+    if (buttons[index].id === window.location.search.replace('?', '')) buttons[index].classList.add('nav__item--black')
   })
 
   if (window.location.search !== '?index') {
@@ -249,11 +245,8 @@ const selectCharacter = (e) => {
   let cards = document.querySelectorAll('.card')
   cards.forEach((card) => {
     card.classList.remove('invisible')
-    if (e.target.value === 'all') {
-      card.classList.remove('invisible')
-    } else if (e.target.value !== card.id) {
-      card.classList.add('invisible')
-    }
+    if (e.target.value === 'all') card.classList.remove('invisible')
+    else if (e.target.value !== card.id) card.classList.add('invisible')
   })
 }
 
