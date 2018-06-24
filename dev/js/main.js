@@ -105,7 +105,7 @@ if (window.location.origin === 'https://juananto11.github.io/api-starwars' && !p
 // En desarrollo
 // if (window.location.origin === 'http://localhost:3000' && !paths.includes(window.location.search.replace('?', ''))) {
 //   window.location.href = 'http://localhost:3000/?index'
-}
+// }
 
 const showPage = (page) => {
   nav.classList.remove('nav-expand')
