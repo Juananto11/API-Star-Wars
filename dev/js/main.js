@@ -126,9 +126,13 @@ const toggleMenu = () => {
 
 const drawResponse = (response, container) => {
   const div = document.createElement('div')
+  const div1 = document.createElement('div')
   div.classList.add('cards-container')
 
   response.forEach((res, index) => {
+    div1.insertAdjacentHTML('beforeend', `
+
+    `)
     switch (window.location.search) {
       case '?people':
         div.insertAdjacentHTML('beforeend', `
